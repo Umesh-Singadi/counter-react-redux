@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, setValueToAdd } from "./store";
+import { increment, decrement, setValueToAdd, addToCount } from "./store";
 
 function App() {
   const { count, valueToAdd } = useSelector((state) => state.counter);
@@ -21,6 +21,7 @@ function App() {
           value={valueToAdd || ""}
           onChange={handleChange}
         />
+        <button onClick={() => dispatch(addToCount())}>Add to Count</button>
       </div>
     </>
   );

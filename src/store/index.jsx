@@ -16,6 +16,10 @@ const counterSlice = createSlice({
     setValueToAdd(state, action) {
       state.valueToAdd = action.payload;
     },
+    addToCount(state) {
+      state.count += state.valueToAdd;
+      state.valueToAdd = 0;
+    },
   },
 });
 
@@ -26,4 +30,5 @@ const store = configureStore({
 });
 
 export { store };
-export const { increment, decrement, setValueToAdd } = counterSlice.actions;
+export const { increment, decrement, setValueToAdd, addToCount } =
+  counterSlice.actions;
