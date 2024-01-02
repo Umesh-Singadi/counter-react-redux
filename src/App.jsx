@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "./store";
+import { increment, decrement } from "./store";
 function App() {
   const { count } = useSelector((state) => state.counter);
   const dispatch = useDispatch();
@@ -7,6 +7,7 @@ function App() {
     <>
       <h1>Counter is : {count}</h1>
       <button onClick={() => dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
     </>
   );
 }
