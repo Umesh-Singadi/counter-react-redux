@@ -10,20 +10,38 @@ function App() {
     dispatch(setValueToAdd(parseInt(value)));
   };
   return (
-    <>
-      <h1>Counter is : {count}</h1>
-      <button onClick={() => dispatch(increment())}>Increment</button>
-      <button onClick={() => dispatch(decrement())}>Decrement</button>
+    <div className=" p-10 flex flex-col">
+      <div className="m-2">
+        <h1 className="font-extrabold text-xl mb-1">Count is : {count}</h1>
+        <button
+          className="border cursor-pointer rounded-md p-2 bg-green-500 text-white mr-2"
+          onClick={() => dispatch(increment())}
+        >
+          Increment
+        </button>
+        <button
+          className="border cursor-pointer rounded-md p-2 bg-red-500 text-white"
+          onClick={() => dispatch(decrement())}
+        >
+          Decrement
+        </button>
+      </div>
       <div>
         <input
+          className="border p-1.5 rounded ml-2"
           type="number"
           placeholder="add to count..."
           value={valueToAdd || ""}
           onChange={handleChange}
         />
-        <button onClick={() => dispatch(addToCount())}>Add to Count</button>
+        <button
+          className="border cursor-pointer rounded-md p-2 bg-blue-500 text-white ml-1"
+          onClick={() => dispatch(addToCount())}
+        >
+          Add to Count
+        </button>
       </div>
-    </>
+    </div>
   );
 }
 
